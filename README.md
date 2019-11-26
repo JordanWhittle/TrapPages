@@ -9,3 +9,5 @@ When memory is allocated with [VirtualAlloc](https://docs.microsoft.com/en-us/wi
 [QueryWorkingSetEx](https://docs.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-queryworkingsetex) can be used to inspect memory allocated by [VirtualAlloc](https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc) to determine whether or not the pages are valid. Pages that have never been accessed will show as invalid, whereas pages which have been accessed will be shown as valid.
 
 This program allocates a page of memory and continuously checks that page to see whether it has became valid. The program never accesses the allocated page, so it can expect that the page is always invalid. If a memory scanner such as Cheat Engine is used to scan the running program, it will trigger the trap page and the program will stop working.
+
+##### Note: for whatever reason, this only works when running as a standalone program and not when launched with the Visual Studio Debugger
