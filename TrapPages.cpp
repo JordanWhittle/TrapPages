@@ -34,6 +34,7 @@ int main()
 			{
 				std::cout << "Memory scanning detected!" << std::endl;
 				std::cin.get();
+				return 1;
 			}
 			Sleep(1);
 		}
